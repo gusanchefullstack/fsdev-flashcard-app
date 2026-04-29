@@ -9,6 +9,7 @@ interface HeaderProps {
 export default function Header({ activeView, onViewChange }: HeaderProps) {
   return (
     <header className={styles.header}>
+      <h1 className="sr-only">Flashcard App</h1>
       <a href="#main-content" className={styles.logo} aria-label="Flashcard App home">
         <img src="/images/logo-small.svg" alt="" width={32} height={32} />
         <span className={styles.logoText}>Flashcard</span>

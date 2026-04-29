@@ -53,7 +53,6 @@ export default function App() {
         aria-hidden="true"
       />
 
-      <h1 className="sr-only">Flashcard App</h1>
       <Header activeView={activeView} onViewChange={setActiveView} />
 
       <main className={styles.content} id="main-content">
