@@ -66,7 +66,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/profile/gusanchefullstack)
-- Live Site URL: [Coming soon](#)
+- Live Site URL: [fsdev-flashcard-app-dev.vercel.app](https://fsdev-flashcard-app-dev.vercel.app)
 
 ## My process
 
