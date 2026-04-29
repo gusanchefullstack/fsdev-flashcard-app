@@ -27,8 +27,6 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
     );
   }
 
-  const progressScale = Math.min(card.knownCount / KNOWN_MAX, 1);
-
   return (
     <div className={styles.container}>
       <div className="sr-only" aria-live="polite" aria-atomic="true">
