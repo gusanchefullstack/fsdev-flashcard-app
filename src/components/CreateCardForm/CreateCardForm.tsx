@@ -41,7 +41,8 @@ export default function CreateCardForm({ categories, onAddCard }: CreateCardForm
     <form className={styles.form} onSubmit={handleSubmit} noValidate aria-label="Create new flashcard">
       <h2 className={styles.title}>Create New Card</h2>
 
-      <div className={styles.fieldGroup}>
+      <fieldset className={styles.fieldGroup}>
+        <legend className={styles.fieldGroupLegend}>Card Content</legend>
         <div className={styles.field}>
           <label className={styles.label} htmlFor="question-input">
             Question
@@ -83,7 +84,7 @@ export default function CreateCardForm({ categories, onAddCard }: CreateCardForm
             </span>
           )}
         </div>
-      </div>
+      </fieldset>
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="category-input">

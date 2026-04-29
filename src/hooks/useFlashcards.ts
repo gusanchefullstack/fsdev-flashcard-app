@@ -42,7 +42,7 @@ export function useFlashcards() {
   const [hideMastered, setHideMastered] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShuffled, setIsShuffled] = useState(false);
-  const [shuffledOrder, setShuffledOrder] = useState<number[]>([]);
+  const [shuffledOrder, setShuffledOrder] = useState<string[]>([]);
 
   const categories = useMemo(() => {
     const cats = Array.from(new Set(cards.map((c) => c.category))).sort();
@@ -58,15 +58,14 @@ export function useFlashcards() {
       result = result.filter((c) => c.knownCount < MASTERED_THRESHOLD);
     }
     if (isShuffled && shuffledOrder.length > 0) {
-      const indexedCards = shuffledOrder
-        .map((i) => result[i])
-        .filter(Boolean);
-      return indexedCards;
+      const idMap = new Map(result.map((c) => [c.id, c]));
+      return shuffledOrder.map((id) => idMap.get(id)).filter((c): c is Flashcard => c !== undefined);
     }
     return result;
   }, [cards, selectedCategory, hideMastered, isShuffled, shuffledOrder]);
 
-  const currentCard = filteredCards[currentIndex] ?? null;
+  const safeIndex = filteredCards.length > 0 ? Math.min(currentIndex, filteredCards.length - 1) : 0;
+  const currentCard = filteredCards[safeIndex] ?? null;
 
   const stats: StudyStats = useMemo(() => ({
     total: cards.length,
@@ -105,8 +104,8 @@ export function useFlashcards() {
   }, [cards, updateCards]);
 
   const shuffle = useCallback(() => {
-    const indices = filteredCards.map((_, i) => i);
-    const shuffled = shuffleArray(indices);
+    const ids = filteredCards.map((c) => c.id);
+    const shuffled = shuffleArray(ids);
     setShuffledOrder(shuffled);
     setIsShuffled(true);
     setCurrentIndex(0);

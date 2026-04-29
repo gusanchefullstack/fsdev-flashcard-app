@@ -17,6 +17,17 @@
 .fieldGroup {
   display: flex;
   gap: var(--space-4);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fieldGroupLegend {
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  padding: 0;
+  margin-bottom: var(--space-2);
 }
 
 .field {
@@ -112,5 +123,13 @@
 @media (max-width: 640px) {
   .fieldGroup {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .textarea,
+  .submitBtn {
+    transition: none;
   }
 }

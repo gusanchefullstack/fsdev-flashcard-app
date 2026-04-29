@@ -40,7 +40,7 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
         onClick={() => setIsFlipped((f) => !f)}
         aria-label={isFlipped ? `Answer: ${card.answer}` : `Question: ${card.question}. Click to reveal answer`}
       >
-        <article className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}>
+        <div className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}>
           {/* Front — question */}
           <div className={styles.face} aria-hidden={isFlipped}>
             <span className={styles.categoryBadge}>{card.category}</span>
@@ -63,19 +63,12 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
             </div>
 
             <div className={styles.progressWrapper}>
-              <div
+              <progress
                 className={styles.progressBar}
-                role="progressbar"
-                aria-valuenow={card.knownCount}
-                aria-valuemin={0}
-                aria-valuemax={KNOWN_MAX}
+                value={card.knownCount}
+                max={KNOWN_MAX}
                 aria-label={`Known ${card.knownCount} of ${KNOWN_MAX} times`}
-              >
-                <div
-                  className={styles.progressFill}
-                  style={{ transform: `scaleX(${progressScale})` }}
-                />
-              </div>
+              />
               <span className={styles.progressText}>
                 {card.knownCount}/{KNOWN_MAX}
               </span>
@@ -89,7 +82,7 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
               <p className={styles.answer}>{card.answer}</p>
             </div>
           </div>
-        </article>
+        </div>
       </button>
     </div>
   );

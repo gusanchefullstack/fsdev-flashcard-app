@@ -73,7 +73,7 @@ export default function AllCards({ cards, categories, onAddCard, onUpdateCard, o
             No cards match your current filters.
           </p>
         ) : (
-          <ul className={styles.cardList} aria-label="Flashcard list">
+          <ul className={styles.cardList}>
             {filteredCards.map((card) => (
               <li key={card.id}>
                 <CardItem

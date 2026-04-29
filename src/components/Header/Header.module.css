@@ -74,3 +74,9 @@
     padding: var(--space-3) var(--space-4);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .navBtn {
+    transition: none;
+  }
+}

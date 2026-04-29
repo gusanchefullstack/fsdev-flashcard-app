@@ -26,8 +26,8 @@ describe('FlashcardDisplay', () => {
   it('shows progress bar with correct value', () => {
     render(<FlashcardDisplay card={card} />);
     const progressbar = screen.getByRole('progressbar');
-    expect(progressbar).toHaveAttribute('aria-valuenow', '2');
-    expect(progressbar).toHaveAttribute('aria-valuemax', '5');
+    expect(progressbar).toHaveAttribute('value', '2');
+    expect(progressbar).toHaveAttribute('max', '5');
   });
 
   it('shows progress count text', () => {

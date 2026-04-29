@@ -126,11 +126,11 @@ export default function CardItem({ card, categories, onUpdate, onDelete }: CardI
 
       <div className={styles.content}>
         <div className={styles.section}>
-          <span className={styles.sectionLabel}>Question</span>
+          <h3 className={styles.sectionLabel}>Question</h3>
           <p className={styles.sectionText}>{card.question}</p>
         </div>
         <div className={styles.section}>
-          <span className={styles.sectionLabel}>Answer</span>
+          <h3 className={styles.sectionLabel}>Answer</h3>
           <p className={styles.sectionText}>{card.answer}</p>
         </div>
       </div>
