@@ -31,16 +31,16 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
 
   return (
     <div className={styles.container}>
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {isFlipped ? `Answer: ${card.answer}` : `Question: ${card.question}`}
+      </div>
       <button
         type="button"
         className={styles.cardWrapper}
         onClick={() => setIsFlipped((f) => !f)}
         aria-label={isFlipped ? `Answer: ${card.answer}` : `Question: ${card.question}. Click to reveal answer`}
       >
-        <article
-          className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}
-          aria-live="polite"
-        >
+        <article className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}>
           {/* Front — question */}
           <div className={styles.face} aria-hidden={isFlipped}>
             <span className={styles.categoryBadge}>{card.category}</span>
