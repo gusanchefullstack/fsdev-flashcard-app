@@ -13,6 +13,7 @@ export default function CardNavigation({ currentIndex, total, onPrev, onNext }: 
   return (
     <nav className={styles.nav} aria-label="Card navigation">
       <button
+        type="button"
         className={styles.navBtn}
         onClick={onPrev}
         disabled={currentIndex === 0 || total === 0}
@@ -27,6 +28,7 @@ export default function CardNavigation({ currentIndex, total, onPrev, onNext }: 
       </p>
 
       <button
+        type="button"
         className={styles.navBtn}
         onClick={onNext}
         disabled={currentIndex >= total - 1 || total === 0}

@@ -10,6 +10,7 @@ export default function CardActions({ hasCard, onMarkKnown, onReset }: CardActio
   return (
     <div className={styles.actions}>
       <button
+        type="button"
         className={styles.primaryBtn}
         onClick={onMarkKnown}
         disabled={!hasCard}
@@ -20,6 +21,7 @@ export default function CardActions({ hasCard, onMarkKnown, onReset }: CardActio
       </button>
 
       <button
+        type="button"
         className={styles.secondaryBtn}
         onClick={onReset}
         aria-label="Reset all card progress"

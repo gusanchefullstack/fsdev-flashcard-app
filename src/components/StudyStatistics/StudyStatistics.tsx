@@ -7,7 +7,7 @@ interface StudyStatisticsProps {
 
 export default function StudyStatistics({ stats }: StudyStatisticsProps) {
   return (
-    <aside className={styles.aside} aria-label="Study statistics">
+    <section className={styles.aside} aria-label="Study statistics">
       <h2 className={styles.title}>Study Statistics</h2>
 
       <ul className={styles.statsList}>
@@ -51,6 +51,6 @@ export default function StudyStatistics({ stats }: StudyStatisticsProps) {
           </div>
         </li>
       </ul>
-    </aside>
+    </section>
   );
 }

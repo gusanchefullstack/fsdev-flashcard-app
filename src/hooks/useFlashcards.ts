@@ -128,6 +128,8 @@ export function useFlashcards() {
   const toggleHideMastered = useCallback(() => {
     setHideMastered((prev) => !prev);
     setCurrentIndex(0);
+    setIsShuffled(false);
+    setShuffledOrder([]);
   }, []);
 
   const addCard = useCallback((data: FlashcardFormData) => {

@@ -102,10 +102,11 @@ export default function CardItem({ card, categories, onUpdate, onDelete }: CardI
 
   return (
     <article className={styles.card}>
-      <header className={styles.header}>
+      <div className={styles.header}>
         <span className={styles.categoryBadge}>{card.category}</span>
         <div className={styles.actions}>
           <button
+            type="button"
             className={styles.iconBtn}
             onClick={() => setIsEditing(true)}
             aria-label={`Edit card: ${card.question}`}
@@ -113,6 +114,7 @@ export default function CardItem({ card, categories, onUpdate, onDelete }: CardI
             <img src="/images/icon-edit.svg" alt="" aria-hidden="true" />
           </button>
           <button
+            type="button"
             className={`${styles.iconBtn} ${styles.deleteBtn}`}
             onClick={() => onDelete(card.id)}
             aria-label={`Delete card: ${card.question}`}
@@ -120,7 +122,7 @@ export default function CardItem({ card, categories, onUpdate, onDelete }: CardI
             <img src="/images/icon-delete.svg" alt="" aria-hidden="true" />
           </button>
         </div>
-      </header>
+      </div>
 
       <div className={styles.content}>
         <div className={styles.section}>

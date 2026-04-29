@@ -45,7 +45,6 @@ export default function App() {
         alt=""
         className={`${styles.bgPattern} ${styles.bgPatternTopRight}`}
         aria-hidden="true"
-        style={{ transform: 'scaleX(-1)' }}
       />
       <img
         src="/images/pattern-star-pink.svg"
@@ -54,6 +53,7 @@ export default function App() {
         aria-hidden="true"
       />
 
+      <h1 className="sr-only">Flashcard App</h1>
       <Header activeView={activeView} onViewChange={setActiveView} />
 
       <main className={styles.content} id="main-content">

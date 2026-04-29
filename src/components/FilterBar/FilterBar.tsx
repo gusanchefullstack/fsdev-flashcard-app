@@ -59,6 +59,7 @@ export default function FilterBar({
       </label>
 
       <button
+        type="button"
         className={`${styles.shuffleBtn} ${isShuffled ? styles.active : ''}`}
         onClick={isShuffled ? onUnshuffle : onShuffle}
         aria-pressed={isShuffled}

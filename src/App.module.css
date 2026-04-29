@@ -8,7 +8,7 @@
 }
 
 .bgPattern {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   z-index: 0;
 }
@@ -25,6 +25,7 @@
   right: 0;
   width: 200px;
   opacity: 0.6;
+  transform: scaleX(-1);
 }
 
 .bgPatternBottomRight {

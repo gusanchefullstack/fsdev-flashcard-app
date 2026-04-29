@@ -27,22 +27,15 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
     );
   }
 
-  const progressPercent = Math.min((card.knownCount / KNOWN_MAX) * 100, 100);
+  const progressScale = Math.min(card.knownCount / KNOWN_MAX, 1);
 
   return (
     <div className={styles.container}>
-      <div
+      <button
+        type="button"
         className={styles.cardWrapper}
         onClick={() => setIsFlipped((f) => !f)}
-        role="button"
-        tabIndex={0}
         aria-label={isFlipped ? `Answer: ${card.answer}` : `Question: ${card.question}. Click to reveal answer`}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            setIsFlipped((f) => !f);
-          }
-        }}
       >
         <article
           className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}
@@ -80,7 +73,7 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
               >
                 <div
                   className={styles.progressFill}
-                  style={{ width: `${progressPercent}%` }}
+                  style={{ transform: `scaleX(${progressScale})` }}
                 />
               </div>
               <span className={styles.progressText}>
@@ -97,7 +90,7 @@ export default function FlashcardDisplay({ card }: FlashcardDisplayProps) {
             </div>
           </div>
         </article>
-      </div>
+      </button>
     </div>
   );
 }

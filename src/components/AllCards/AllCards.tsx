@@ -28,7 +28,7 @@ export default function AllCards({ cards, categories, onAddCard, onUpdateCard, o
   }, [cards, filterCategory, hideMastered]);
 
   return (
-    <div className={styles.container} id="all-cards-panel" role="tabpanel" aria-label="All Cards">
+    <div className={styles.container}>
       <CreateCardForm categories={categories} onAddCard={onAddCard} />
 
       <section className={styles.cardListSection}>

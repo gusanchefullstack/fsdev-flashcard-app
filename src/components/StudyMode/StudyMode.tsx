@@ -44,7 +44,7 @@ export default function StudyMode({
   onReset,
 }: StudyModeProps) {
   return (
-    <div className={styles.container} id="study-panel" role="tabpanel" aria-label="Study Mode">
+    <div className={styles.container}>
       <div className={styles.mainPanel}>
         <FilterBar
           categories={categories}
@@ -73,9 +73,9 @@ export default function StudyMode({
         />
       </div>
 
-      <aside className={styles.sidePanel}>
+      <div className={styles.sidePanel}>
         <StudyStatistics stats={stats} />
-      </aside>
+      </div>
     </div>
   );
 }

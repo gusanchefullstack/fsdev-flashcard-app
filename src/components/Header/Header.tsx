@@ -18,6 +18,7 @@ export default function Header({ activeView, onViewChange }: HeaderProps) {
         <div className={styles.nav} role="tablist">
           <button
             id="tab-study"
+            type="button"
             role="tab"
             aria-selected={activeView === 'study'}
             aria-controls="study-panel"
@@ -28,6 +29,7 @@ export default function Header({ activeView, onViewChange }: HeaderProps) {
           </button>
           <button
             id="tab-all-cards"
+            type="button"
             role="tab"
             aria-selected={activeView === 'all-cards'}
             aria-controls="all-cards-panel"

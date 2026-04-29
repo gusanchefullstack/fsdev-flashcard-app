@@ -19,13 +19,13 @@
 }
 
 .sidePanel {
-  width: 300px;
+  width: min(300px, 30%);
   flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
   .sidePanel {
-    width: 260px;
+    width: min(260px, 30%);
   }
 }
 
