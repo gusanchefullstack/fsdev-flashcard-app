@@ -43,6 +43,11 @@
 
 @media (max-width: 480px) {
   .container {
-    padding: var(--space-4);
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .mainPanel {
+    border-radius: var(--radius-md);
   }
 }
