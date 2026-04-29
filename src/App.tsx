@@ -57,7 +57,12 @@ export default function App() {
       <Header activeView={activeView} onViewChange={setActiveView} />
 
       <main className={styles.content} id="main-content">
-        {activeView === 'study' ? (
+        <div
+          id="study-panel"
+          role="tabpanel"
+          aria-labelledby="tab-study"
+          hidden={activeView !== 'study'}
+        >
           <StudyMode
             filteredCards={filteredCards}
             currentCard={currentCard}
@@ -76,7 +81,13 @@ export default function App() {
             onMarkKnown={markKnown}
             onReset={resetProgress}
           />
-        ) : (
+        </div>
+        <div
+          id="all-cards-panel"
+          role="tabpanel"
+          aria-labelledby="tab-all-cards"
+          hidden={activeView !== 'all-cards'}
+        >
           <AllCards
             cards={cards}
             categories={categories}
@@ -84,7 +95,7 @@ export default function App() {
             onUpdateCard={updateCard}
             onDeleteCard={deleteCard}
           />
-        )}
+        </div>
       </main>
     </div>
   );
