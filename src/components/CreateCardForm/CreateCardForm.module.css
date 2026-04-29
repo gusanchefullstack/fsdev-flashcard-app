@@ -1,0 +1,116 @@
+.form {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.fieldGroup {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.label {
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.input,
+.textarea {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--fs-sm);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+}
+
+.input.error,
+.textarea.error {
+  border-color: #ef4444;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.errorMsg {
+  font-size: var(--fs-xs);
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-accent-yellow);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-btn);
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.submitBtn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--color-border);
+}
+
+.submitBtn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px var(--color-border);
+}
+
+.submitBtn:focus-visible {
+  outline: 2px solid var(--color-accent-yellow-dark);
+  outline-offset: 2px;
+}
+
+.submitIcon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 640px) {
+  .fieldGroup {
+    flex-direction: column;
+  }
+}

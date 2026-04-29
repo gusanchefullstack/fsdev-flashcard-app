@@ -1,0 +1,118 @@
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.categoryWrapper {
+  position: relative;
+}
+
+.categorySelect {
+  appearance: none;
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.categorySelect:focus {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
+.chevronIcon {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: var(--color-accent-yellow);
+}
+
+.shuffleBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.shuffleBtn:hover {
+  background-color: var(--color-bg);
+}
+
+.shuffleBtn:focus-visible {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
+.shuffleBtn.active {
+  background-color: var(--color-accent-yellow);
+  border-color: var(--color-accent-yellow);
+}
+
+.shuffleIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 480px) {
+  .filterBar {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .categorySelect {
+    min-width: 130px;
+    font-size: var(--fs-xs);
+  }
+
+  .checkboxLabel {
+    font-size: var(--fs-xs);
+  }
+
+  .shuffleBtn {
+    font-size: var(--fs-xs);
+    padding: var(--space-2) var(--space-3);
+  }
+}

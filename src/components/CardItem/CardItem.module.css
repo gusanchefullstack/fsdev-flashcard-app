@@ -1,0 +1,194 @@
+.card {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-bg);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.iconBtn:hover {
+  background-color: var(--color-bg);
+}
+
+.iconBtn:focus-visible {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
+.iconBtn.deleteBtn:hover {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
+
+.iconBtn img {
+  width: 16px;
+  height: 16px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sectionLabel {
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sectionText {
+  font-size: var(--fs-sm);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  align-self: flex-start;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.statusMastered {
+  background-color: rgba(52, 195, 160, 0.15);
+  color: #0d9488;
+}
+
+.statusInProgress {
+  background-color: rgba(245, 91, 136, 0.15);
+  color: #be185d;
+}
+
+.statusNotStarted {
+  background-color: rgba(156, 163, 175, 0.15);
+  color: var(--color-text-secondary);
+}
+
+/* Edit mode */
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.editFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.editField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.editLabel {
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.editInput,
+.editTextarea {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-sm);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  resize: vertical;
+}
+
+.editInput:focus,
+.editTextarea:focus {
+  outline: none;
+  border-color: var(--color-accent-yellow);
+}
+
+.editActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.saveBtn {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-accent-yellow);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+.cancelBtn {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .content,
+  .editFields {
+    grid-template-columns: 1fr;
+  }
+}

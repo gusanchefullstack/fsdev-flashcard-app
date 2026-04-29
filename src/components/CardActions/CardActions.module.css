@@ -1,0 +1,98 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-accent-yellow);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-btn);
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--color-border);
+}
+
+.primaryBtn:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px var(--color-border);
+}
+
+.primaryBtn:focus-visible {
+  outline: 2px solid var(--color-accent-yellow-dark);
+  outline-offset: 2px;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primaryIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.secondaryBtn:hover:not(:disabled) {
+  background-color: var(--color-bg);
+}
+
+.secondaryBtn:focus-visible {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 2px;
+}
+
+.secondaryBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondaryIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 480px) {
+  .actions {
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--fs-xs);
+  }
+}
